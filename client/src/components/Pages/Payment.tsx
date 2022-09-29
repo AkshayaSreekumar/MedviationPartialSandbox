@@ -178,9 +178,12 @@ const Payment = () => {
         //-------------- InterACTPay Dev-----------------//
         //let baseUrl = "https://crma-pay-developer-edition.na163.force.com/";
         //-------- Medviation Dev  ------//
-        let baseUrl = "https://crmapay-developer-edition.na213.force.com/";
+        //let baseUrl = "https://crmapay-developer-edition.na213.force.com/";
         //------------Medviation Dev Sandbox ----------//
         //let baseUrl = "https://developer-crmapay.cs214.force.com/"
+        //------------Medviation Partial Sandbox ----------//
+        let baseUrl = "https://medviation--medvsbox.sandbox.my.salesforce-sites.com"
+        
         setBaseUrl(baseUrl);
         var payLinkParams = { paymentLinkId: urlPaymentLinkId };
         var url = baseUrl + "InteractPay/services/apexrest/crma_pay/InterACTPayAuthorizationUpdated/?methodType=GET&inputParams=" +
@@ -605,7 +608,9 @@ const Payment = () => {
                 // Med Sandbox
                 //var redirectUrl = 'https://developer-medviation.cs214.force.com/xchng/s/invoice-page'+'?transId=' + response;
                 //Med Dev
-                var redirectUrl = 'https://medviation-developer-edition.na213.force.com/s/invoice-page' + '?transId=' + response;
+                //var redirectUrl = 'https://medviation-developer-edition.na213.force.com/s/invoice-page' + '?transId=' + response;
+                //Med Partila sandbox
+                var redirectUrl = 'https://medviation--medvsbox.sandbox.my.salesforce-sites.com' + '?transId=' + response;
                 console.log("redirecturl-->" + redirectUrl);
                 navigateTo(redirectUrl);
             })
